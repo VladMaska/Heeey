@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc3b27b7026444f3c80dff6b454a8822, type: 3}
-  m_Name: Player_IDLE
+  m_Name: P_MOVE
   m_EditorClassIdentifier: 
-  interval: 0
+  interval: 0.2
   frames:
+  - {fileID: 21300000, guid: 85c788accc1a34889b9e13907d833d6c, type: 3}
   - {fileID: 21300000, guid: a2db412967f0d42e0b5bc95412f4384e, type: 3}

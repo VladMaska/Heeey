@@ -9,9 +9,13 @@ public class AnimationData : ScriptableObject {
 
     [HorizontalLine]
     
+    public string key;
+    
+    [HorizontalLine]
+    
     public float interval;
 
-    [HorizontalLine]
+    [Space( 20 )]
     
     [ShowAssetPreview]
     public Sprite[] frames;

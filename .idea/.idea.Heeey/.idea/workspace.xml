@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/SDKs/MODs/AnimationModSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f802dacb2161406db9dc55ea5356f5d515d800/b8/c4288176/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -54,7 +55,8 @@
       <option name="presentableId" value="Default" />
       <updated>1677455136376</updated>
       <workItem from="1677455170662" duration="2018000" />
-      <workItem from="1677457571773" duration="3319000" />
+      <workItem from="1677457571773" duration="3558000" />
+      <workItem from="1677464970580" duration="5041000" />
     </task>
     <servers />
   </component>

@@ -9,17 +9,22 @@ namespace Heeey {
         [HorizontalLine]
         public AnimationData animationData;
 
-        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
-        
-        private SpriteRenderer _sr;
-        
-        // private 
-        public float _time;
-        private int _f;
-        
+        public bool mod;
+
         /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
-        private void Start() => _sr = GetComponent<SpriteRenderer>();
+        private SpriteRenderer _sr;
+
+        private float _time;
+        private int _f;
+
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+        private void Start(){
+            
+            _sr = GetComponent<SpriteRenderer>();
+
+        }
 
         private void Update(){
             
@@ -44,8 +49,10 @@ namespace Heeey {
                 }
                 
             }
-            
+
         }
+
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
         private void NewFrame(){
             
