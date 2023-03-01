@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3b27b7026444f3c80dff6b454a8822, type: 3}
   m_Name: P_IDLE
   m_EditorClassIdentifier: 
+  id: player
   key: idle
   interval: 0
   frames:

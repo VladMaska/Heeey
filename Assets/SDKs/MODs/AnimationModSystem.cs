@@ -17,11 +17,11 @@ namespace Heeey.Mod.Animation {
         // [SerializeField] private string jsonText;
 
         [Button]
-        private void StartLoad() => GetData( "player" );
+        private void StartLoad() => GetData( $"{id}" );
 
         /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
-        private void Start() => GetData("player");
+        private void Start() => GetData( $"{id}" );
 
         /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 

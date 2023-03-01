@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlType: PC
   playerSpeed: 1
-  playerJump: 0
+  playerJump: 2.5
   control:
   - key: Left
     keyCode: 97
   - key: Right
     keyCode: 100
+  - key: Jump
+    keyCode: 119

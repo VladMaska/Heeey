@@ -7,8 +7,9 @@ namespace Heeey {
     public class Animation : MonoBehaviour {
 
         [HorizontalLine]
-        public AnimationData animationData;
 
+        public AnimationData animationData;
+        
         public bool mod;
 
         /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
@@ -20,11 +21,7 @@ namespace Heeey {
 
         /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
-        private void Start(){
-            
-            _sr = GetComponent<SpriteRenderer>();
-
-        }
+        private void Start() => _sr = this.gameObject.GetComponent<SpriteRenderer>();
 
         private void Update(){
             

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3b27b7026444f3c80dff6b454a8822, type: 3}
   m_Name: P_MOVE
   m_EditorClassIdentifier: 
+  id: player
+  key: move
   interval: 0.2
   frames:
   - {fileID: 21300000, guid: 85c788accc1a34889b9e13907d833d6c, type: 3}

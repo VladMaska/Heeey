@@ -8,7 +8,6 @@ using Unity.VisualScripting;
 public class AnimationData : ScriptableObject {
 
     [HorizontalLine]
-    
     public string key;
     
     [HorizontalLine]
