@@ -9,6 +9,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f802dacb2161406db9dc55ea5356f5d515d800/b8/c4288176/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SDKs/Data/Map/MapGeneratorData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SDKs/MODs/AnimationModSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2MIVYFL9Mlv3uk4RNRsBuuDTMni" />
@@ -56,7 +57,7 @@
       <workItem from="1677455170662" duration="2018000" />
       <workItem from="1677457571773" duration="3558000" />
       <workItem from="1677464970580" duration="5555000" />
-      <workItem from="1677678398828" duration="2594000" />
+      <workItem from="1677678398828" duration="4680000" />
     </task>
     <servers />
   </component>

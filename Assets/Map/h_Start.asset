@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4846447e0c79140258f43774391a0d8b, type: 3}
+  m_Name: h_Start
+  m_EditorClassIdentifier: 
+  mapName: 
+  map: {fileID: 2800000, guid: 23f1ba74cf1e04fc1950a89b9d5d2d93, type: 3}
+  elements:
+  - name: test
+    color: {r: 1, g: 0, b: 0, a: 1}
+    element:
+    - {fileID: 2203696785800372097, guid: 892231d6cb841419fa51a1a52435d015, type: 3}
