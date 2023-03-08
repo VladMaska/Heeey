@@ -1,28 +1,14 @@
-using System;
-using NaughtyAttributes;
 using UnityEngine;
 using Color = UnityEngine.Color;
-using Random = UnityEngine.Random;
+
+using NaughtyAttributes;
 
 namespace WhiteWolf.LevelGenerator {
-
-    [System.Serializable]
-    public class Elements {
-
-        public string name;
-
-        [Space]
-
-        public Color color;
-        
-        [ShowAssetPreview]
-        public GameObject[] element;
-
-    }
 
     public class WW_LevelGenerator : MonoBehaviour {
 
         [Space]
+        [Range( 0, 1 )]
         [SerializeField] private float n;
 
         [Space]
@@ -33,21 +19,22 @@ namespace WhiteWolf.LevelGenerator {
         [Space]
         
         [SerializeField] private Transform level;
-        [SerializeField] private MapGeneratorData mapData;
-        // [SerializeField] private Texture2D map;
-        // [SerializeField] private Elements[] elements;
+        [SerializeField] private MapGeneratorData  mapData;
 
-        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
         private float _posX, _posY;
         private enum AreaType {
             
+            None,
             Block,
             Border
             
         }
 
-        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+        private GameObject _block;
+
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
         private void Start(){
             
@@ -58,7 +45,7 @@ namespace WhiteWolf.LevelGenerator {
 
         }
 
-        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
         private void Generator(){
 
@@ -74,27 +61,79 @@ namespace WhiteWolf.LevelGenerator {
 
             var pixelColor = mapData.map.GetPixel( x, y );
 
-            if ( pixelColor.a == 0 ){ return;  }
+            if ( pixelColor.a == 0 ){ return; }
 
-            foreach ( var el in mapData.elements ) {
+            _block = mapData
+                .BlockData()[ pixelColor ]
+                .GetBlock()[ CheckBlock( x, y, pixelColor ) ];
 
-                if ( el.color.Equals( pixelColor ) ){
+            var pos = new Vector2( _posX + ( x * n ), _posY + ( y * n ) );
 
-                    var pos = new Vector2( _posX + ( x * n ), _posY + ( y * n ) );
-
-                    var r = Random.Range( 0, el.element.Length );
-
-                    var obj = Instantiate( el.element[ r ], Vector3.zero, Quaternion.identity, level );
-                    obj.transform.localPosition = pos;
-                    obj.name = el.name;
-
-                }
-
-            }
+            var obj = Instantiate( _block, Vector3.zero, Quaternion.identity, level );
+            obj.transform.localPosition = pos;
+            obj.name = _block.name;
 
         }
+        
+        private string CheckBlock( int posX, int posY, Color blockColor ){
 
-        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+            // var blockID = new char[4]; // create a char array with size of 4
+
+            var blockID = "";
+
+            if ( GetColor( posX, posY ).a > 0 )
+            
+                // Check each block around the current block
+                for ( var i = 1; i <= 4; i++ ){
+
+                    switch ( i ){
+                        
+                        /* top block */
+                        case 1:
+
+                            if ( posY + 1 < mapData.map.height && GetColor( posX, posY + 1 ) == blockColor )
+                                blockID += $"{i}";
+
+                            break;
+                        
+                        /* right block */
+                        case 2:
+
+                            if ( posX + 1 < mapData.map.width && GetColor( posX + 1, posY ) == blockColor )
+                                blockID += $"{i}";
+
+                            break;
+
+                        /* bottom block */
+                        case 3:
+
+                            if ( posY - 1 >= 0 && GetColor( posX, posY - 1 ) == blockColor )
+                                blockID += $"{i}";
+
+                            break;
+                        
+                        /* left block */
+                        case 4:
+
+                            if ( posX - 1 >= 0 && GetColor( posX - 1, posY ) == blockColor )
+                                blockID += $"{i}";
+
+                            break;
+
+                    }
+
+                }
+        
+            else
+                blockID = "null";
+                
+            return ( blockID == "" ) ? "0" : blockID;
+        
+        }
+        
+        private Color GetColor( int posX, int posY ){ return mapData.map.GetPixel( posX, posY ); }
+
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
         private void OnDrawGizmos(){
             
@@ -110,27 +149,29 @@ namespace WhiteWolf.LevelGenerator {
 
             if ( !level )
                 level = this.gameObject.transform;
+            
+            if ( areaType != AreaType.None )
 
-            switch ( areaType ){
+                switch ( areaType ){
                 
-                case AreaType.Block:
+                    case AreaType.Block:
                     
-                    Gizmos.DrawCube( transform.position, size );
+                        Gizmos.DrawCube( transform.position, size );
                     
-                    break;
+                        break;
                 
-                case AreaType.Border:
+                    case AreaType.Border:
                     
-                    areaColor = new Color( areaColor.r, areaColor.b, areaColor.g, 255/255f );
-                    Gizmos.DrawWireCube( transform.position, size );
+                        areaColor = new Color( areaColor.r, areaColor.b, areaColor.g, 255/255f );
+                        Gizmos.DrawWireCube( transform.position, size );
                     
-                    break;
+                        break;
                 
-            }
+                }
 
         }
         
-        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+        /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
         public void Reset(){
 

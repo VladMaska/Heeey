@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Unity.VisualScripting;
 
-[CreateAssetMenu( menuName = "Data/Animation" )]
+[CreateAssetMenu( fileName = "Animation",menuName = "Data/Animation/Animation" )]
 public class AnimationData : ScriptableObject {
 
     [HorizontalLine]

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787054958c4c9437da47f46c65641fb3, type: 3}
   m_Name: pDB
   m_EditorClassIdentifier: 
-  id: player
   animations:
   - key: IDLE
-    animationData: {fileID: 11400000, guid: 9e51c5d56debb4154a5b90a6965ea84a, type: 2}
+    animationData: {fileID: 11400000, guid: 70adde2c688704ceb81a8623d9df6c03, type: 2}
   - key: MOVE
     animationData: {fileID: 11400000, guid: 3da6daf46260a4e1d990de023017aed0, type: 2}

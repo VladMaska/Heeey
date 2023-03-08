@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using NaughtyAttributes;
 
-[CreateAssetMenu( menuName = "Data/Animations DB" )]
+[CreateAssetMenu( fileName = "Animations DB", menuName = "Data/Animation/Animations DB" )]
 public class AnimationsDB : ScriptableObject {
 
     [HorizontalLine]

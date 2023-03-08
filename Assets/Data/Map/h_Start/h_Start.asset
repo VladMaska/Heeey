@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4846447e0c79140258f43774391a0d8b, type: 3}
   m_Name: h_Start
   m_EditorClassIdentifier: 
-  mapName: 
-  map: {fileID: 2800000, guid: 23f1ba74cf1e04fc1950a89b9d5d2d93, type: 3}
+  mapName: Test
+  map: {fileID: 2800000, guid: 3021c74a7e0ad4b77bdd519889e72df9, type: 3}
   elements:
   - name: test
-    color: {r: 1, g: 0, b: 0, a: 1}
-    element:
-    - {fileID: 2203696785800372097, guid: 892231d6cb841419fa51a1a52435d015, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    blocks: {fileID: 11400000, guid: 343ef5cb1a3a9457ca2fc69671c6b6cd, type: 2}
